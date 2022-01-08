@@ -1,0 +1,44 @@
+.App {
+  text-align: center;
+}
+
+button {
+  margin: 2rem 0;
+  font-size: 30px;
+  padding: 8px 20px;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.text {
+  font-size: 35px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+.input-grp {
+  margin: 10px 0;
+}
+
+.input-grp .label {
+  margin-right: 1rem;
+}
+
+.input-grp input {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 150px;
+  padding: 5px 10px;
+}
+
+button.submit {
+  background-color: green;
+}
+
+button.clear {
+  background-color: red;
+}
