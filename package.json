@@ -1,13 +1,13 @@
 {
   "name": "mtk-single",
   "version": "0.0.0",
-  "homepage": "https://mtk-app.github.io/single-game/",
+  "homepage": "https://mtk-app.github.io/single-game",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d dist" 
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^17.0.2",
