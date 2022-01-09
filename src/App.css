@@ -16,6 +16,10 @@ button {
   font-size: 35px;
 }
 
+.text.bold {
+  font-weight: bold;
+}
+
 h1 {
   font-size: 40px;
 }
@@ -26,6 +30,33 @@ h1 {
 
 .input-grp .label {
   margin-right: 1rem;
+  font-weight: bold;
+}
+
+.rows-container {
+  width: 70vw;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: bold;
+}
+
+.rows-container .game-row {
+  background-color: white;
+  margin: 10px 0;
+  padding: 5px 0;
+  border-radius: 5px;
+}
+
+.rows-container .game-row .single {
+  display: inline-block;
+  width: 40%;
+  text-align: right;
+}
+
+.rows-container .game-row .amt {
+  display: inline-block;
+  width: 40%;
+  text-align: left;
 }
 
 .input-grp input {
