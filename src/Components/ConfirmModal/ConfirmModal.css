@@ -1,0 +1,49 @@
+.ConfirmModal {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    position: fixed;
+    inset: 0;
+}
+
+.ConfirmModal .modal {
+    background-color: #FFF;
+    width: 200px;
+    height: 100px;
+    padding: 10px;
+}
+
+.ConfirmModal .modal .msg{
+    text-align: center;
+    font-weight: bold;
+}
+
+.ConfirmModal .modal .btn-container{
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ConfirmModal .modal .btn-container .modal-btn{
+    font-size: 13px;
+    padding: 8px 18px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.ConfirmModal .modal .btn-container .cancel-btn{
+    background-color: rgb(226, 23, 23);
+}
+
+.ConfirmModal .modal .btn-container .submit-btn{
+    background-color: rgb(16, 143, 16);
+}

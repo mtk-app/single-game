@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import ConfirmModal from '@/Components/ConfirmModal/ConfirmModal';
 
 const allZeros = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 const emptyStrArr = ['', '', '', '', '', '', '', '', '', ''];
@@ -8,6 +9,8 @@ const LOCAL_STORAGE_KEY = 'singleTotal';
 function App() {
   const [form, setForm] = useState([...emptyStrArr]);
   const [total, setTotal] = useState(null);
+  const [confirmModal, setConfirmModal] = useState(false);
+
   const handleChange = (idx) => {
     return (e) => {
       setForm((prevForm) => {
@@ -37,7 +40,6 @@ function App() {
       if (form[idx] > 0) return (t += Number(form[idx]));
       return (t += 0);
     });
-    console.log(newTotal);
     setTotal(newTotal);
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newTotal));
     setForm([...emptyStrArr]);
@@ -46,6 +48,7 @@ function App() {
   const handleClear = () => {
     setTotal([...allZeros]);
     localStorage.removeItem(LOCAL_STORAGE_KEY);
+    setConfirmModal(false)
   };
 
   return (
@@ -58,7 +61,7 @@ function App() {
             <input type="number" className="text" onChange={handleChange(idx)} value={item} />
           </div>
         ))}
-        <button className="submit">Submit</button>
+        <button className="app-btn submit">Submit</button>
         <hr />
       </form>
       <h1 style={{ marginTop: '3rem' }}>Total Game</h1>
@@ -73,9 +76,17 @@ function App() {
           ))}
       </div>
       <h1>Total - {total && total.reduce((prev, curr) => (prev += curr), 0)}</h1>
-      <button className="clear" onClick={handleClear}>
+      <button className="app-btn clear" onClick={() => setConfirmModal(true)}>
         Clear
       </button>
+      {confirmModal && (
+        <ConfirmModal
+          msg="Confirm clear total game!"
+          handleSubmit={handleClear}
+          handleCancel={() => setConfirmModal(false)}
+          submitBtnTxt="confirm"
+        />
+      )}
     </div>
   );
 }
